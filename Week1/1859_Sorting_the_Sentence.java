@@ -1,6 +1,6 @@
 class Solution {
     public String sortSentence(String s) {
-        String [] strArr = s.split(" ");
+         String [] strArr = s.split(" ");
         String [] sortedArr = new String[strArr.length];
 
         int wPos;
@@ -17,7 +17,7 @@ class Solution {
         for(String str: sortedArr){
             sortedSentence += ( str + " ");
         }
-        idx = sortSentence.length() - 1;
+        idx = sortedSentence.length() - 1;
         sortedSentence = sortedSentence.substring(0, idx); // removing the last space character
 
         return sortedSentence;

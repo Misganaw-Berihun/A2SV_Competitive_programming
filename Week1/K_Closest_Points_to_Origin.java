@@ -5,20 +5,22 @@ class Solution {
         double maxSqDistance;
         double currSqDistance;
 
-        int maxIndex;
+        int minIndex;
 
         for(int i = points.length - 1; i > 0; i--){
-            maxIndex = i;
-            maxSqDistance =  Math.pow(points[i][0] , 2.0) +  Math.pow(points[i][1],2.0) ;
+            minIndex = i;
+            minSqDistance =  Math.pow(points[i][0] , 2.0) +  Math.pow(points[i][1],2.0) ;
+
+            //finding the smallest distances and puting them at the end
             for(int j = i - 1; j >= 0; j--){
                 currSqDistance = Math.pow(points[j][0] , 2.0) + Math.pow(points[j][1],2.0) ;
-                    if(maxSqDistance > currSqDistance){
-                        maxIndex = j;
-                        maxSqDistance = currSqDistance;
+                    if(minSqDistance > currSqDistance){
+                        minIndex = j;
+                        minSqDistance = currSqDistance;
                     }
                 }
 
-            swap(points,maxIndex, i);
+            swap(points,minIndex, i);
         }
 
         int kthIdx = 0;

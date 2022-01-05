@@ -7,13 +7,10 @@ class Solution:
         temp = nums[0]
 
         for i in range(len(nums)):
-            if nums[i] == temp:
-                continue
-            else:
+            if nums[i] != temp:
                 nums[idx] = nums[i]
                 idx += 1
                 temp = nums[i]
 
         return idx
-
-        
+                
